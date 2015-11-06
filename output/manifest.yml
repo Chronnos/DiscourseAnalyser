@@ -1,0 +1,19 @@
+---
+declared-services:
+  Personality Insights:
+    label: personality_insights
+    plan: standard
+    
+  MongoDB Discourses:
+    label: MongoDB by Compose
+    plan: user-provided
+    
+applications:
+- services:
+  - MongoDB Discourses
+  - Personality Insights
+  name: DiscourseAnalyser
+  path: output/webApp.war
+  memory: 512M
+  host: discourseanalyser
+  domain: mybluemix.net
